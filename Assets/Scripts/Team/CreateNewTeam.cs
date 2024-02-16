@@ -19,7 +19,7 @@ public class CreateNewTeam : MonoBehaviour
             GameObject team = Instantiate(NewTeam, NewTeamPos.position, Quaternion.identity);
             team.transform.SetParent(NewTeamDir.transform, false);
             listOfTeams.Add(team);
-            NewTeamPos.position += NewTeamPos.right * 5;
+            NewTeamPos.position += NewTeamPos.right * 3.5f;
         }
         Debug.Log("start");
     }

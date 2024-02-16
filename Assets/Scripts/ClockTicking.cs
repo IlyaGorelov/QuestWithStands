@@ -21,16 +21,25 @@ public class ClockTicking : MonoBehaviour
     // Update is called once per frame
     bool IsStart = false;
     IEnumerator cor;
+    ClockSound clock;
 
     private void Start()
     {
         cor = Rotatr();
         randomValue = Random.Range(0, 8);
+        clock= FindObjectOfType<ClockSound>();
+        clockTicking = clock.audios;
     }
 
+    private void OnDisable()
+    {
+        foreach (var c in clockTicking)
+        {
+            c.Stop();
+        }
+    }
     public void StartTime()
     {
-
         if (!IsStart)
         {
             IsStart = true;
@@ -58,10 +67,11 @@ public class ClockTicking : MonoBehaviour
     {
        
        int RandomMelody = Random.Range(0, clockTicking.Length);
-        int randomForChoice = Random.Range(0, 8);
+        int randomForChoice = Random.Range(0, 6);
         if (randomForChoice < 3)
         {
             RandomMelody = 0;
+            Debug.Log(clockTicking[RandomMelody]);
         }
         if (randomValue == 0)
         {

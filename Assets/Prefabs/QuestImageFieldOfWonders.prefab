@@ -1095,7 +1095,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282228758884428}
   textReal: {fileID: 5381282230283097260}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &3175620241563901632
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1718,7 +1717,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282229689765384}
   textReal: {fileID: 5381282229227968402}
   audioRight: {fileID: 6298040900601082023}
-  audioWrong: {fileID: 6745902984456733102}
 --- !u!82 &6298040900601082023
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2690,7 +2688,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2088803204314048752, guid: ee6ba73ff767d0845b7f8c93a013874b, type: 2}
   m_audioClip: {fileID: 8300000, guid: df5d6e944d401ad4ead4d48052cc64af, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.81
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4121,7 +4119,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282228763393324}
   textReal: {fileID: 5381282228937600960}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &6476252228466695728
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6592,7 +6589,7 @@ GameObject:
   - component: {fileID: 5381282229725182485}
   - component: {fileID: 5381282229725182484}
   m_Layer: 0
-  m_Name: 50
+  m_Name: 500
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7638,7 +7635,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282229746915096}
   textReal: {fileID: 5381282229742985280}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &5330971895455225534
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9720,7 +9716,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282229185572370}
   textReal: {fileID: 5381282230762792356}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &2997880467139018589
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10054,7 +10049,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282229628854382}
   textReal: {fileID: 5381282230156256456}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &2173618306363682872
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10388,7 +10382,6 @@ MonoBehaviour:
   textCheck: {fileID: 5381282230121246386}
   textReal: {fileID: 5381282229565885393}
   audioRight: {fileID: 3175620241563901632}
-  audioWrong: {fileID: 2725162755882059955}
 --- !u!82 &5056336122365202036
 AudioSource:
   m_ObjectHideFlags: 0
