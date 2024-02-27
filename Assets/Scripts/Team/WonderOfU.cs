@@ -18,7 +18,7 @@ public class WonderOfU : MonoBehaviour
     {
         if (!Properties.isPause && score.text != "0" && Properties.canDoWOU && Convert.ToInt32(score.text)>2000)
         {
-            int rand = UnityEngine.Random.Range(0, 10000);
+            int rand = UnityEngine.Random.Range(0, 20000);
             if (rand == 101)
             {
                 animWOU.SetTrigger("WOU");

@@ -17,7 +17,7 @@ public class D4CLoveTrain : MonoBehaviour
     {
         if (!Properties.isPause && score.text != "0" && Properties.canDoD4C && Convert.ToInt32(score.text) > 2000)
         {
-            int rand = UnityEngine.Random.Range(0, 10000);
+            int rand = UnityEngine.Random.Range(0, 15000);
             if (rand == 1)
             {
                 animD4c.SetTrigger("D4C");
