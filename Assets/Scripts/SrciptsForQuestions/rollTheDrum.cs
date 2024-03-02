@@ -1,22 +1,23 @@
-
 using System.Collections;
 using UnityEngine;
 
 public class rollTheDrum : MonoBehaviour
 {
-    [SerializeField] GameObject drum;
-    [SerializeField] float smooth=0;
-    [SerializeField] AudioSource audio;
+    [SerializeField] private GameObject drum;
+    [SerializeField] private float smooth = 0;
+    [SerializeField] private AudioSource audio;
+
     public void Roll()
     {
         audio.Play();
-        Properties.isEndOfRoll=false;
+        Properties.isEndOfRoll = false;
         int rand = Random.Range(1, 3);
         StartCoroutine(WaitForSeconds(rand));
     }
+
     private void Update()
     {
-       drum.transform.rotation *= Quaternion.Euler(0, 0, smooth);
+        drum.transform.rotation *= Quaternion.Euler(0, 0, smooth);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             smooth = 0;
@@ -30,12 +31,10 @@ public class rollTheDrum : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.2f);
-            smooth -=0.1f;
+            smooth -= 0.1f;
         }
-       Properties.isEndOfRoll = true;
+        Properties.isEndOfRoll = true;
         audio.Stop();
         smooth = 0;
     }
-
-
 }

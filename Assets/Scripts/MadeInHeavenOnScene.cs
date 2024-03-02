@@ -1,25 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MadeInHeavenOnScene : MonoBehaviour
 {
-    [SerializeField] AudioSource audioMIH;
-    [SerializeField] Animator animMIH;
-    void Update()
+    [SerializeField] private AudioSource audioMIH;
+    [SerializeField] private Animator animMIH;
+    private void Update()
     {
         if (Properties.isMadeInHeaven)
         {
             Properties.isMadeInHeaven = false;
             audioMIH.Play();
             animMIH.SetTrigger("MIH");
-            if(Properties.isPause)
+            if (Properties.isPause)
                 Time.timeScale = 3.0f;
-            
         }
         if (!Properties.isPause)
             Time.timeScale = 1;
     }
-
-    
 }

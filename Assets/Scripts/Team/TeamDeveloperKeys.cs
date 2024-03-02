@@ -1,20 +1,19 @@
-
 using UnityEngine;
 
 public class TeamDeveloperKeys : MonoBehaviour
 {
-    [SerializeField] GameObject[] developerKeys;
-    bool isDeveloperMode = false;
-    void Start()
+    [SerializeField] private GameObject[] developerKeys;
+    private bool isDeveloperMode = false;
+
+    private void Start()
     {
-        foreach (var key in developerKeys) 
+        foreach (var key in developerKeys)
         {
             key.SetActive(false);
         }
     }
 
-    
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.F1) && !isDeveloperMode)
         {

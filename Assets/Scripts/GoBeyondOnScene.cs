@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GoBeyondOnScene : MonoBehaviour
 {
-    [SerializeField] AudioSource audioSAW;
-    [SerializeField] Animator animator;
-    void Update()
+    [SerializeField] private AudioSource audioSAW;
+    [SerializeField] private Animator animator;
+    private void Update()
     {
-        if(Properties.activateSAW)
+        if (Properties.activateSAW)
         {
             audioSAW.Play();
             animator.SetTrigger("SAW");

@@ -1,8 +1,3 @@
-
-using System.Diagnostics.Contracts;
-using Unity.VisualScripting;
-using UnityEditor;
-
 public class Properties
 {
     public static int countOfTeams;

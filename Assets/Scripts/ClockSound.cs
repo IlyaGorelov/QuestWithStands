@@ -2,12 +2,10 @@ using UnityEngine;
 
 public class ClockSound : MonoBehaviour
 {
-    public  AudioSource[] audios;
+    public AudioSource[] audios;
 
     private void Start()
     {
-        audios=GetComponents<AudioSource>();
+        audios = GetComponents<AudioSource>();
     }
-
-   
 }

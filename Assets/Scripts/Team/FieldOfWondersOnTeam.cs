@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
+
 public class FieldOfWondersOnTeam : MonoBehaviour
 {
-    public int tempScore=0;
-    [SerializeField] TextMeshProUGUI text;
+    public int tempScore = 0;
+    [SerializeField] private TextMeshProUGUI text;
+
     private void Update()
     {
         if (tempScore != 0)

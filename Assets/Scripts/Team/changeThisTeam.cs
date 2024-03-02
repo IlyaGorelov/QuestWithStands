@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 public class changeThisTeam : MonoBehaviour
@@ -6,17 +5,19 @@ public class changeThisTeam : MonoBehaviour
     public bool Can;
     public static bool ChooseAll;
     SpriteRenderer spriteRenderer;
+
     private void Start()
     {
-        spriteRenderer=GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
+
     private void Update()
     {
-        if (Can||ChooseAll)
+        if (Can || ChooseAll)
         {
             if (Input.GetKey(KeyCode.LeftArrow))
             {
-                transform.position -= transform.right * (0.1f/4);
+                transform.position -= transform.right * (0.1f / 4);
             }
             if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -38,18 +39,16 @@ public class changeThisTeam : MonoBehaviour
             }
         }
     }
+
     public void CanChange()
     {
-        
         if (Can) Can = false;
         else Can = true;
     }
+
     public void ChooseAl()
     {
-
         if (ChooseAll) ChooseAll = false;
         else ChooseAll = true;
     }
-
-    
 }

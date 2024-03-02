@@ -1,21 +1,20 @@
 using TMPro;
-
 using UnityEngine;
 
 public class QuestionScript : MonoBehaviour
 {
-   public static int activeTeamID = 0;
-    bool isQuestionBodyActive = false;
-    int questionID;
-    [SerializeField] TextMeshProUGUI showTurn;
-    [SerializeField] CreateNewTeam createNewTeam;
-    TMP_InputField fd;
-    GameObject team;
+    public static int activeTeamID = 0;
+    private bool isQuestionBodyActive = false;
+    private int questionID;
+    [SerializeField] private TextMeshProUGUI showTurn;
+    [SerializeField] private CreateNewTeam createNewTeam;
+    private TMP_InputField fd;
+    private GameObject team;
     public GameObject[] questions;
-    void Start()
+
+    private void Start()
     {
         GameObject team = createNewTeam.listOfTeams[activeTeamID];
-
     }
-    
+
 }

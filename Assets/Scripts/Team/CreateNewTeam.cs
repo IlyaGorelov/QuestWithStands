@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-[System.Serializable]
+
 public class CreateNewTeam : MonoBehaviour
 {
     public static CreateNewTeam instance;
@@ -8,9 +8,9 @@ public class CreateNewTeam : MonoBehaviour
     public Transform NewTeamPos;
     [SerializeField] public GameObject NewTeamDir;
     public int _teams;
-     int i = 0;
+    private int i = 0;
     public List<GameObject> listOfTeams = new List<GameObject>();
-    
+
     private void Start()
     {
         while (i < Properties.countOfTeams)

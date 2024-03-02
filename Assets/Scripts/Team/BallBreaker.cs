@@ -1,9 +1,9 @@
-
 using UnityEngine;
 
 public class BallBreaker : MonoBehaviour
 {
     [SerializeField] GameObject closeArea;
+
     public void canDoBallBreaker()
     {
         Properties.activateBallBreaker = true;

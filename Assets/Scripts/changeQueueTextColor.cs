@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class changeQueueTextColor : MonoBehaviour
 {
-    TextMeshProUGUI text;
-    void Start()
+    private TextMeshProUGUI text;
+
+    private void Start()
     {
-        text=GetComponent<TextMeshProUGUI>();
+        text = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Properties.isFieldOfWonders)
         {

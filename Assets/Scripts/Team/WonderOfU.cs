@@ -1,22 +1,22 @@
 using System;
 using System.Collections;
 using TMPro;
-
 using UnityEngine;
 
 public class WonderOfU : MonoBehaviour
 {
-    [SerializeField] AudioSource audioWOU;
-    [SerializeField] Animator animWOU;
-    [SerializeField] TextMeshProUGUI score;
-    [SerializeField] TextMeshProUGUI changeText;
-    [SerializeField] AudioSource audioCD;
-    [SerializeField] Animator animCD;
-     int changeInt;
+    [SerializeField] private AudioSource audioWOU;
+    [SerializeField] private Animator animWOU;
+    [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private TextMeshProUGUI changeText;
+    [SerializeField] private AudioSource audioCD;
+    [SerializeField] private Animator animCD;
+    private int changeInt;
     public bool doCD = false;
-    void Update()
+
+    private void Update()
     {
-        if (!Properties.isPause && score.text != "0" && Properties.canDoWOU && Convert.ToInt32(score.text)>2000)
+        if (!Properties.isPause && score.text != "0" && Properties.canDoWOU && Convert.ToInt32(score.text) > 2000)
         {
             int rand = UnityEngine.Random.Range(0, 20000);
             if (rand == 101)
@@ -24,7 +24,7 @@ public class WonderOfU : MonoBehaviour
                 animWOU.SetTrigger("WOU");
                 audioWOU.Play();
                 changeInt = (int)Math.Round(Convert.ToInt32(score.text) * 0.1, 0);
-                int temp = (int)Math.Round(Convert.ToInt32(score.text) * 0.9,0);
+                int temp = (int)Math.Round(Convert.ToInt32(score.text) * 0.9, 0);
                 score.text = temp.ToString();
                 changeText.text = "Минус 10%";
                 StartCoroutine(WaitForSeconds(3));

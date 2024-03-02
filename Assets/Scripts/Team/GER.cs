@@ -1,22 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class GER : MonoBehaviour
 {
-    [SerializeField] GameObject closeArea;
-    [SerializeField] TMP_InputField numOfTeam;
-    CreateNewTeam newTeam;
+    [SerializeField] private GameObject closeArea;
+    [SerializeField] private TMP_InputField numOfTeam;
+    private CreateNewTeam newTeam;
+
     private void Start()
     {
-
         GameObject teams = GameObject.Find("Teams");
         newTeam = teams.GetComponent<CreateNewTeam>();
     }
+
     public void DoGER()
     {
-        int num = int.Parse(numOfTeam.text)-1;
+        int num = int.Parse(numOfTeam.text) - 1;
         Debug.Log(num);
         newTeam.listOfTeams[num].GetComponentInChildren<Destroy>().isGER = true;
         closeArea.SetActive(true);

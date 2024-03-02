@@ -1,10 +1,10 @@
-
 using UnityEngine;
 
 public class PlayMusic : MonoBehaviour
 {
-    [SerializeField] AudioSource audio;
-    bool isPlay = false;
+    [SerializeField] private AudioSource audio;
+    private bool isPlay = false;
+
     public void Play()
     {
         if (!isPlay)

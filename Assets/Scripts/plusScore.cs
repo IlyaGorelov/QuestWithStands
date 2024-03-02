@@ -1,20 +1,18 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class plusScore : MonoBehaviour
+public class PlusScore : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI score;
-    [SerializeField] TMP_InputField Changescore;
-    [SerializeField] GameObject ChangeImage;
+    [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private TMP_InputField Changescore;
+    [SerializeField] private GameObject ChangeImage;
 
     public void Plus()
     {
-        int old=Int32.Parse(score.text);
-        int newScore= old + Int32.Parse(Changescore.text);
-        score.text=newScore.ToString();
+        int old = Int32.Parse(score.text);
+        int newScore = old + Int32.Parse(Changescore.text);
+        score.text = newScore.ToString();
         ChangeImage.SetActive(false);
     }
     public void Minus()

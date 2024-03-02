@@ -1,10 +1,10 @@
-
 using UnityEngine;
 
 public class ChangeId : MonoBehaviour
 {
-    [SerializeField] ThisQuestion question;
-    public void changeID()
+    [SerializeField] private ThisQuestion question;
+
+    public void ÑhangeID()
     {
         Properties.QuestID = question.questID;
     }

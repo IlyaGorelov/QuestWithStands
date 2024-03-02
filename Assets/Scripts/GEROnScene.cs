@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GEROnScene : MonoBehaviour
 {
-    [SerializeField] Animator anim;
-    void Update()
+    [SerializeField] private Animator anim;
+    private void Update()
     {
         if (Properties.doGER)
         {

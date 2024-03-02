@@ -5,29 +5,30 @@ using UnityEngine.Video;
 
 public class ClockTicking : MonoBehaviour
 {
-
-    [SerializeField] int time = 30;
-
+    [SerializeField] private int time = 30;
     public VideoPlayer[] _player;
     public TextMeshProUGUI timeText;
     public Animation _tempTextAnim;
     public TextMeshProUGUI _tempText;
-
+    [Header("Audio")]
     public AudioSource[] clockTicking;
     public AudioSource kingCrimsonSound;
-    int randomValue;
-    [SerializeField] Animator TheWorld;
-    [SerializeField] Animator KingCrimson;
-    // Update is called once per frame
-    bool IsStart = false;
-    IEnumerator cor;
-    ClockSound clock;
+
+    [Header("Animator")]
+    [SerializeField] private Animator TheWorld;
+    [SerializeField] private Animator KingCrimson;
+
+    private int randomValue;
+
+    private bool IsStart = false;
+    private IEnumerator cor;
+    private ClockSound clock;
 
     private void Start()
     {
         cor = Rotatr();
         randomValue = Random.Range(0, 8);
-        clock= FindObjectOfType<ClockSound>();
+        clock = FindObjectOfType<ClockSound>();
         clockTicking = clock.audios;
     }
 
@@ -43,7 +44,6 @@ public class ClockTicking : MonoBehaviour
         if (!IsStart)
         {
             IsStart = true;
-
             StartCoroutine(cor);
             foreach (var tic in clockTicking)
             {
@@ -53,20 +53,17 @@ public class ClockTicking : MonoBehaviour
         else
         {
             IsStart = false;
-
             StopCoroutine(cor);
             foreach (var tic in clockTicking)
             {
                 tic.volume = 0;
             }
         }
-
     }
 
     IEnumerator Rotatr()
     {
-       
-       int RandomMelody = Random.Range(0, clockTicking.Length);
+        int RandomMelody = Random.Range(0, clockTicking.Length);
         int randomForChoice = Random.Range(0, 6);
         if (randomForChoice < 3)
         {
@@ -92,7 +89,6 @@ public class ClockTicking : MonoBehaviour
                     TheWorld.SetTrigger("Appear");
                     yield return new WaitForSeconds(15);
                     clockTicking[RandomMelody].Play();
-
                 }
             }
             clockTicking[RandomMelody].Stop();
@@ -109,7 +105,6 @@ public class ClockTicking : MonoBehaviour
                 if (time == 9)
                 {
                     kingCrimsonSound.Play();
-
                     clockTicking[RandomMelody].Pause();
                     yield return new WaitForSeconds(2);
                     _tempText.text = "- 10 секунд";
@@ -131,10 +126,8 @@ public class ClockTicking : MonoBehaviour
                 yield return new WaitForSeconds(1);
                 timeText.text = time.ToString();
                 time--;
-
             }
             clockTicking[RandomMelody].Stop();
         }
     }
-
 }

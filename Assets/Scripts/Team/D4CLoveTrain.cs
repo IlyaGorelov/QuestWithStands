@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class D4CLoveTrain : MonoBehaviour
 {
-    [SerializeField] AudioSource audioD4C;
-    [SerializeField] Animator animD4c;
-    [SerializeField] AudioSource audioT4;
-    [SerializeField] Animator animT4;
-    [SerializeField] TextMeshProUGUI score;
-    [SerializeField] TextMeshProUGUI changeText;
-    int changeInt;
+
+    [SerializeField] private AudioSource audioD4C;
+    [SerializeField] private Animator animD4c;
+    [SerializeField] private AudioSource audioT4;
+    [SerializeField] private Animator animT4;
+    [SerializeField] private TextMeshProUGUI score;
+    [SerializeField] private TextMeshProUGUI changeText;
+    private int changeInt;
     public bool doT4;
-    void Update()
+
+    private void Update()
     {
         if (!Properties.isPause && score.text != "0" && Properties.canDoD4C && Convert.ToInt32(score.text) > 2000)
         {
@@ -33,12 +35,13 @@ public class D4CLoveTrain : MonoBehaviour
         }
         if (doT4)
         {
-            score.text = (Convert.ToInt32(score.text)-changeInt).ToString();
+            score.text = (Convert.ToInt32(score.text) - changeInt).ToString();
             audioT4.Play();
             animT4.SetTrigger("T4");
             doT4 = false;
         }
     }
+
     IEnumerator WaitForSeconds(float a)
     {
         yield return new WaitForSecondsRealtime(a);

@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class CreateLevel : MonoBehaviour
 {
-    [SerializeField] GameObject loadImage;
+    [SerializeField] private GameObject loadImage;
     public void Create()
     {
         loadImage.SetActive(true);
-        StartCoroutine(load());
+        StartCoroutine(Load());
     }
 
-    IEnumerator load()
+    IEnumerator Load()
     {
         AsyncOperation loadAsync = SceneManager.LoadSceneAsync(1);
         yield return null;

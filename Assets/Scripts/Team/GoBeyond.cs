@@ -1,9 +1,9 @@
-
 using UnityEngine;
 
 public class GoBeyond : MonoBehaviour
 {
-    [SerializeField] GameObject closeArea;
+    [SerializeField] private GameObject closeArea;
+
     public void canDoGoBeyond()
     {
         Properties.activateSAW = true;
@@ -12,7 +12,7 @@ public class GoBeyond : MonoBehaviour
 
     private void Update()
     {
-       if(!Properties.canDoWOU)
+        if (!Properties.canDoWOU)
             closeArea.SetActive(true);
     }
 }

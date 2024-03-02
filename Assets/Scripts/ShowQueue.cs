@@ -5,25 +5,26 @@ using UnityEngine;
 
 public class ShowQueue : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI queueText;
-    [SerializeField] GameObject queueObject;
-    [SerializeField] List<string> names;
-    GameObject team;
-    [SerializeField] CreateNewTeam createNewTeam;
+    [SerializeField] private TextMeshProUGUI queueText;
+    [SerializeField] private GameObject queueObject;
+    [SerializeField] private List<string> names;
+    private GameObject team;
+    [SerializeField] private CreateNewTeam createNewTeam;
     private void Start()
     {
         queueObject.SetActive(false);
     }
+
     public void Show()
     {
         string name;
         foreach (var item in createNewTeam.listOfTeams)
         {
-            name=item.GetComponentInChildren<TMP_InputField>().text;
+            name = item.GetComponentInChildren<TMP_InputField>().text;
             names.Add(name);
         }
         queueObject.SetActive(true);
-        queueText.text="Очередь команды " + names[Properties.ActiveTeamID];
+        queueText.text = "Очередь команды " + names[Properties.ActiveTeamID];
         StartCoroutine(showText());
     }
 

@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Destroy : MonoBehaviour
 {
-    public bool isGER=false;
-    [SerializeField] Animator anim;
-    [SerializeField] AudioSource audio;
-    [SerializeField] GameObject WOU;
-    [SerializeField] GameObject LoveTrain;
+    public bool isGER = false;
+    [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource audio;
+    [SerializeField] private GameObject WOU;
+    [SerializeField] private GameObject LoveTrain;
+
     private void Update()
     {
         if (isGER)

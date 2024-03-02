@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class AddPoints : MonoBehaviour
 {
-    CreateNewTeam team;
-    [SerializeField] TextMeshProUGUI points;
-    FieldOfWondersOnTeam field;
-    bool canAdd = true;
+    private CreateNewTeam team;
+    private FieldOfWondersOnTeam field;
+    [SerializeField] private TextMeshProUGUI points;
+    private bool canAdd = true;
+
     private void Start()
     {
         team = GetComponentInParent<CreateNewTeam>();
         field = GetComponent<FieldOfWondersOnTeam>();
     }
+
     void Update()
     {
         if (Properties.ActiveTeamID == team.listOfTeams.IndexOf(gameObject) && Properties.canAdd)
         {
             Properties.canAdd = false;
             points.text = (Convert.ToInt32(points.text) + Properties.QuestID * 100).ToString();
-
         }
         else if (Properties.ActiveTeamID == team.listOfTeams.IndexOf(gameObject) && Properties.canAddToField && Properties.isFieldOfWonders)
         {
@@ -43,7 +44,6 @@ public class AddPoints : MonoBehaviour
                     field.tempScore *= 2;
                     break;
             }
-
         }
         else if (Properties.ActiveTeamID == team.listOfTeams.IndexOf(gameObject))
         {

@@ -1,18 +1,16 @@
-
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CrossOut : MonoBehaviour
 {
-    [SerializeField] GameObject cross;
-    Transform target;
-    GameObject tCross;
-    bool canDo = false;
-    [SerializeField] List<GameObject> crosses;
-    private void Start()
-    {
-        target = GetComponent<Transform>();
-    }
+    [SerializeField] private GameObject cross;
+    private Transform target;
+    private GameObject tCross;
+    private bool canDo = false;
+    [SerializeField] private List<GameObject> crosses;
+
+    private void Start() => target = GetComponent<Transform>();
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0) && canDo)
@@ -31,13 +29,7 @@ public class CrossOut : MonoBehaviour
         }
     }
 
-    private void OnMouseEnter()
-    {
-        canDo = true;
-    }
-    private void OnMouseExit()
-    {
-        canDo = false;
-    }
+    private void OnMouseEnter() => canDo = true;
 
+    private void OnMouseExit() => canDo = false;
 }
