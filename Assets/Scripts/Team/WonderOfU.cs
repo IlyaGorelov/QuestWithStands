@@ -29,6 +29,7 @@ public class WonderOfU : MonoBehaviour
                 changeText.text = "Минус 10%";
                 StartCoroutine(WaitForSeconds(3));
                 changeText.text = null;
+                StartCoroutine(StopStands());
             }
             Debug.Log(rand);
         }
@@ -45,5 +46,13 @@ public class WonderOfU : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(a);
         changeText.text = null;
+    }
+    IEnumerator StopStands()
+    {
+        Properties.canDoD4C = false;
+        Properties.canDoWOU = false;
+        yield return new WaitForSecondsRealtime(10);
+        Properties.canDoD4C = true;
+        Properties.canDoWOU = true;
     }
 }

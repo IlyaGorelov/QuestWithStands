@@ -20,7 +20,7 @@ public class D4CLoveTrain : MonoBehaviour
         if (!Properties.isPause && score.text != "0" && Properties.canDoD4C && Convert.ToInt32(score.text) > 2000)
         {
             int rand = UnityEngine.Random.Range(0, 15000);
-            if (rand == 1)
+            if (rand == 14254)
             {
                 animD4c.SetTrigger("D4C");
                 audioD4C.Play();
@@ -30,6 +30,7 @@ public class D4CLoveTrain : MonoBehaviour
                 changeText.text = "Плюс 10%";
                 StartCoroutine(WaitForSeconds(3));
                 changeText.text = null;
+                StartCoroutine(StopStands());
             }
             Debug.Log(rand);
         }
@@ -46,5 +47,13 @@ public class D4CLoveTrain : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(a);
         changeText.text = null;
+    }
+    IEnumerator StopStands()
+    {
+        Properties.canDoD4C = false;
+        Properties.canDoWOU = false;
+        yield return new WaitForSecondsRealtime(10);
+        Properties.canDoD4C = true;
+        Properties.canDoWOU = true;
     }
 }

@@ -8,8 +8,8 @@ public class Results : MonoBehaviour
     public CreateNewTeam newTeamScript;
     [SerializeField] private TextMeshProUGUI Top;
     [SerializeField] private GameObject TopImage;
-    [SerializeField] private VideoPlayer WinSound;
-    [SerializeField] private GameObject WinVideo;
+    [SerializeField] private AudioSource Music;
+    private VideoClip a;
     private int max = 0;
     private string NameOfTheFirst;
     private int place = 1;
@@ -30,9 +30,8 @@ public class Results : MonoBehaviour
 
     public void GetResults()
     {
-        WinVideo.SetActive(true);
+        Music.Play();
         TopImage.SetActive(true);
-        WinSound.Play();
         foreach (var t in newTeamScript.listOfTeams)
         {
             TMP_InputField name = t.GetComponentInChildren<TMP_InputField>();
@@ -47,7 +46,6 @@ public class Results : MonoBehaviour
                 place++;
             }
         }
-        WinSound.loopPointReached += OnVideoEnd;
     }
     public void NewResult()
     {
@@ -68,13 +66,5 @@ public class Results : MonoBehaviour
         }
     }
 
-    void OnVideoEnd(UnityEngine.Video.VideoPlayer videoPlayer)
-    {
-        WinVideo.SetActive(false);
-    }
-
-    public void SkipVideo()
-    {
-        WinVideo.SetActive(false);
-    }
+    public void Skip() => Music.Pause();
 }

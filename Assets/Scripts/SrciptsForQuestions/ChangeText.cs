@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ChangeText : MonoBehaviour
 {
-    public bool canChange = false;
+    [HideInInspector] public bool canChange = false;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private string newText;
     [SerializeField] private AudioSource audioD4C;
