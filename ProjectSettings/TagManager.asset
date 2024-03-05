@@ -6,6 +6,7 @@ TagManager:
   tags:
   - team
   - wall
+  - theWorldSound
   layers:
   - Default
   - TransparentFX

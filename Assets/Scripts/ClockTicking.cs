@@ -13,6 +13,7 @@ public class ClockTicking : MonoBehaviour
     [Header("Audio")]
     public AudioSource[] clockTicking;
     public AudioSource kingCrimsonSound;
+    private AudioSource theWorldSound;
 
     [Header("Animator")]
     [SerializeField] private Animator TheWorld;
@@ -26,6 +27,7 @@ public class ClockTicking : MonoBehaviour
 
     private void Start()
     {
+        theWorldSound=GameObject.FindGameObjectWithTag("theWorldSound").GetComponent<AudioSource>();
         cor = Rotatr();
         randomValue = Random.Range(0, 8);
         clock = FindObjectOfType<ClockSound>();
@@ -84,7 +86,9 @@ public class ClockTicking : MonoBehaviour
                     clockTicking[RandomMelody].Pause();
                     _tempText.text = "+ 10 секунд";
                     _tempTextAnim.Play();
+                    _player[0].SetDirectAudioVolume(0,0f);
                     _player[0].Play();
+                    theWorldSound.Play();
                     yield return new WaitForSeconds(1.5f);
                     TheWorld.SetTrigger("Appear");
                     yield return new WaitForSeconds(15);
@@ -106,7 +110,7 @@ public class ClockTicking : MonoBehaviour
                 {
                     kingCrimsonSound.Play();
                     clockTicking[RandomMelody].Pause();
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(1.5f);
                     _tempText.text = "- 10 секунд";
                     _tempTextAnim.Play();
                     KingCrimson.SetTrigger("Appear");
