@@ -19,4 +19,9 @@ public class Properties
     public static bool isRightLetter = false;
     public static bool canAddToField = false;
     public static bool isEndOfRoll = false;
+    public static int maxWOU =20000;
+    public static int maxD4CLT=15000;
+    public static bool isDeveloperMode = false;
+    public static bool LockD4CForever = false;
+    public static bool LockWouForever = false;
 }

@@ -17,10 +17,10 @@ public class D4CLoveTrain : MonoBehaviour
 
     private void Update()
     {
-        if (!Properties.isPause && score.text != "0" && Properties.canDoD4C && Convert.ToInt32(score.text) > 2000)
+        if (!Properties.isPause && score.text != "0" && Properties.canDoD4C && Convert.ToInt32(score.text) > 2000 && !Properties.LockD4CForever)
         {
-            int rand = UnityEngine.Random.Range(0, 15000);
-            if (rand == 14254)
+            int rand = UnityEngine.Random.Range(0, Properties.maxD4CLT);
+            if (rand == Properties.maxD4CLT-435)
             {
                 animD4c.SetTrigger("D4C");
                 audioD4C.Play();

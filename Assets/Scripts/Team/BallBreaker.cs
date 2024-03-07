@@ -7,12 +7,12 @@ public class BallBreaker : MonoBehaviour
     public void canDoBallBreaker()
     {
         Properties.activateBallBreaker = true;
-        Properties.canDoD4C = false;
+        Properties.LockD4CForever = true;
     }
 
     private void Update()
     {
-        if (!Properties.canDoD4C)
+        if (Properties.LockD4CForever)
             closeArea.SetActive(true);
     }
 }

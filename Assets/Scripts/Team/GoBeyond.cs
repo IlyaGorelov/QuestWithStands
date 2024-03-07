@@ -7,12 +7,12 @@ public class GoBeyond : MonoBehaviour
     public void canDoGoBeyond()
     {
         Properties.activateSAW = true;
-        Properties.canDoWOU = false;
+        Properties.LockWouForever = true;
     }
 
     private void Update()
     {
-        if (!Properties.canDoWOU)
+        if (Properties.LockWouForever)
             closeArea.SetActive(true);
     }
 }
